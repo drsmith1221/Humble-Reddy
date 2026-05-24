@@ -26,15 +26,11 @@ export default function LandingPage() {
       ))}
 
       <div className="relative z-10 max-w-2xl text-center">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <div>
           <span className="inline-block text-4xl mb-4">✨</span>
           <h1 className="font-playfair text-5xl md:text-6xl font-black text-gray-900 leading-tight mb-4">
             Your baby&apos;s name<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-400">
+            <span style={{ background: 'linear-gradient(to right, #a855f7, #f472b6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               is already out there.
             </span>
           </h1>
@@ -42,29 +38,20 @@ export default function LandingPage() {
             Instead of endless lists that mean nothing to you — let&apos;s have a real conversation.
             Tell me who you are, and I&apos;ll find names that actually <em>fit</em>.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/quiz"
-            className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-400 text-white font-bold text-lg shadow-lg shadow-purple-200 hover:shadow-purple-300 hover:scale-105 transition-all duration-200"
+            className="inline-block px-8 py-4 rounded-full text-white font-bold text-lg shadow-lg hover:scale-105 transition-all duration-200"
+            style={{ background: 'linear-gradient(to right, #a855f7, #f472b6)' }}
           >
             Let&apos;s find your name →
           </Link>
           <p className="text-sm text-gray-400">Takes about 2 minutes</p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 flex items-center justify-center gap-8 text-center"
-        >
+        <div className="mt-16 flex items-center justify-center gap-8 text-center">
           {[
             { emoji: '💬', label: 'Real conversation' },
             { emoji: '🎯', label: 'Tailored to you' },
@@ -75,7 +62,7 @@ export default function LandingPage() {
               <span className="text-xs text-gray-500 font-medium">{f.label}</span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </main>
   );
