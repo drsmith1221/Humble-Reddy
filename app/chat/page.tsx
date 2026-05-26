@@ -71,6 +71,17 @@ function ChatPageInner() {
           body: JSON.stringify({ messages: outgoing, quizAnswers }),
         });
 
+        if (!res.ok) {
+          const errText = await res.text();
+          let errMsg = 'Something went wrong on the server.';
+          try { errMsg = JSON.parse(errText).error; } catch { /* use default */ }
+          setMessages((prev) => [
+            ...prev,
+            { role: 'assistant' as const, content: `⚠️ ${errMsg}` },
+          ]);
+          return;
+        }
+
         if (!res.body) return;
 
         const reader = res.body.getReader();
