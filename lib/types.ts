@@ -4,6 +4,7 @@ export type NamePriority = 'meaning' | 'sound' | 'uniqueness' | 'cultural';
 export type GenderDirection = 'girl' | 'boy' | 'neutral' | 'surprise';
 
 export interface QuizAnswers {
+  freeformIntro: string;
   vibe: Vibe | null;
   aesthetic: Aesthetic | null;
   priority: NamePriority | null;

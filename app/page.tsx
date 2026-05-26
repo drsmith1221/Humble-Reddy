@@ -42,7 +42,7 @@ export default function LandingPage() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="/quiz"
+            href="/onboarding"
             className="inline-block px-8 py-4 rounded-full text-white font-bold text-lg shadow-lg hover:scale-105 transition-all duration-200"
             style={{ background: 'linear-gradient(to right, #a855f7, #f472b6)' }}
           >
