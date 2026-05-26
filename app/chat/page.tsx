@@ -54,11 +54,11 @@ function ChatPageInner() {
       if (!quizAnswers) return;
       const isOpening = !userText;
       const outgoing: Message[] = isOpening
-        ? []
+        ? [{ role: 'user' as const, content: 'Hi! Please introduce yourself and get our conversation started.' }]
         : [...messages, { role: 'user' as const, content: userText! }];
 
       if (!isOpening) {
-        setMessages(outgoing);
+        setMessages((prev) => [...prev, { role: 'user' as const, content: userText! }]);
         setInput('');
       }
 
